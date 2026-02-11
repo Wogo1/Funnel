@@ -1,0 +1,742 @@
+<html>
+<head>
+<title>Landing Funnel_Natura Matter_V1.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Landing Funnel_Natura Matter_V1.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!doctype </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;fr&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+  <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;utf-8&quot; </span><span class="s0">/&gt;</span>
+  <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1&quot; </span><span class="s0">/&gt;</span>
+  <span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;https://cdn.tailwindcss.com&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+  <span class="s0">&lt;title&gt;</span><span class="s1">Natura Mater — Funnel</span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+
+<span class="s0">&lt;body </span><span class="s2">class</span><span class="s3">=&quot;bg-transparent text-black/80&quot;</span><span class="s0">&gt;</span>
+  <span class="s4">&lt;!-- FUNNEL (modal panel only — destiné à être affiché dans une iframe fullscreen) --&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;funnelRoot&quot; </span><span class="s2">class</span><span class="s3">=&quot;min-h-screen p-4 md:p-6&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div</span>
+      <span class="s2">class</span><span class="s3">=&quot;mx-auto w-full max-w-3xl max-h-[90vh] bg-[#ece4da] rounded-3xl shadow-xl border border-black/10 overflow-hidden flex flex-col&quot;</span>
+      <span class="s2">role</span><span class="s3">=&quot;dialog&quot;</span>
+      <span class="s2">aria-modal</span><span class="s3">=&quot;true&quot;</span>
+      <span class="s2">aria-label</span><span class="s3">=&quot;Funnel Natura Mater&quot;</span>
+    <span class="s0">&gt;</span>
+      <span class="s4">&lt;!-- top bar --&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center justify-between px-6 py-4 bg-white border-b border-black/10&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div&gt;</span>
+          <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;text-xs font-semibold tracking-widest text-[#1a5049] uppercase&quot;</span><span class="s0">&gt;</span><span class="s1">Natura Mater</span><span class="s0">&lt;/p&gt;</span>
+          <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_top_sub&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-sm text-black/60&quot;</span><span class="s0">&gt;</span><span class="s1">Accompagnement — choisissez un parcours</span><span class="s0">&lt;/p&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center gap-2&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;button</span>
+            <span class="s2">type</span><span class="s3">=&quot;button&quot;</span>
+            <span class="s2">data-back</span>
+            <span class="s2">class</span><span class="s3">=&quot;hidden rounded-full px-4 py-2 text-sm font-semibold 
+                   border border-black/10 bg-white hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition 
+                   focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span>
+          <span class="s0">&gt;</span>
+            <span class="s1">← </span><span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_back&quot;</span><span class="s0">&gt;</span><span class="s1">Retour</span><span class="s0">&lt;/span&gt;</span>
+          <span class="s0">&lt;/button&gt;</span>
+
+          <span class="s0">&lt;button</span>
+            <span class="s2">type</span><span class="s3">=&quot;button&quot;</span>
+            <span class="s2">data-close-funnel</span>
+            <span class="s2">class</span><span class="s3">=&quot;group rounded-full px-4 py-2 text-sm font-semibold 
+                   bg-[#1a5049] text-white border border-transparent 
+                   hover:bg-[#14433d] hover:border-white/30 transition 
+                   focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span>
+          <span class="s0">&gt;</span>
+            <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_close&quot;</span><span class="s0">&gt;</span><span class="s1">Fermer</span><span class="s0">&lt;/span&gt; </span><span class="s1">✕</span>
+          <span class="s0">&lt;/button&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+
+      <span class="s4">&lt;!-- content (scrollable) --&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;p-6 md:p-8 overflow-y-auto&quot;</span><span class="s0">&gt;</span>
+        <span class="s4">&lt;!-- STEP: ORIENTATION --&gt;</span>
+        <span class="s0">&lt;section </span><span class="s2">data-step</span><span class="s3">=&quot;home&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bg-white rounded-3xl border border-black/10 p-7&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">id</span><span class="s3">=&quot;t_home_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-2xl md:text-3xl font-bold text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Dans quel cadre souhaitez-vous agir aujourd’hui ?</span>
+            <span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_home_desc&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 text-black/70&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Choisissez l’option qui correspond le mieux à votre situation actuelle.</span>
+            <span class="s0">&lt;/p&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="s0">&gt;</span>
+            <span class="s4">&lt;!-- A --&gt;</span>
+            <span class="s0">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">data-goto</span><span class="s3">=&quot;a&quot;</span>
+              <span class="s2">class</span><span class="s3">=&quot;group text-left bg-white rounded-3xl border border-black/10 p-5 
+                     hover:border-[#1a5049]/60 hover:shadow-sm transition 
+                     focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center justify-between gap-4&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                  <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_a_card_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">A — Se former</span><span class="s0">&lt;/h3&gt;</span>
+                  <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_a_card_desc&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Monter en compétence ou former une équipe aux solutions bas-carbone.</span><span class="s0">&lt;/p&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+                  <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/button&gt;</span>
+
+            <span class="s4">&lt;!-- B --&gt;</span>
+            <span class="s0">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">data-goto</span><span class="s3">=&quot;b&quot;</span>
+              <span class="s2">class</span><span class="s3">=&quot;group text-left bg-white rounded-3xl border border-black/10 p-5 
+                     hover:border-[#1a5049]/60 hover:shadow-sm transition 
+                     focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center justify-between gap-4&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                  <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_b_card_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">B — Être accompagné sur un projet</span><span class="s0">&lt;/h3&gt;</span>
+                  <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_b_card_desc&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Réduire l’impact carbone d’un projet immobilier concret.</span><span class="s0">&lt;/p&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+                  <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/button&gt;</span>
+
+            <span class="s4">&lt;!-- C --&gt;</span>
+            <span class="s0">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">data-goto</span><span class="s3">=&quot;c&quot;</span>
+              <span class="s2">class</span><span class="s3">=&quot;group text-left bg-white rounded-3xl border border-black/10 p-5 
+                     hover:border-[#1a5049]/60 hover:shadow-sm transition 
+                     focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center justify-between gap-4&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                  <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_c_card_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">C — Projet personnel</span><span class="s0">&lt;/h3&gt;</span>
+                  <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_c_card_desc&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Construire ou rénover un habitat sain et bas-carbone.</span><span class="s0">&lt;/p&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+                  <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/button&gt;</span>
+
+            <span class="s4">&lt;!-- D --&gt;</span>
+            <span class="s0">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;button&quot; </span><span class="s2">data-goto</span><span class="s3">=&quot;d&quot;</span>
+              <span class="s2">class</span><span class="s3">=&quot;group text-left bg-white rounded-3xl border border-black/10 p-5 
+                     hover:border-[#1a5049]/60 hover:shadow-sm transition 
+                     focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flex items-center justify-between gap-4&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                  <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_d_card_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">D — Producteurs de matériaux</span><span class="s0">&lt;/h3&gt;</span>
+                  <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_d_card_desc&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment.</span><span class="s0">&lt;/p&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+                  <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/button&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s4">&lt;!-- STEP A --&gt;</span>
+        <span class="s0">&lt;section </span><span class="s2">data-step</span><span class="s3">=&quot;a&quot; </span><span class="s2">class</span><span class="s3">=&quot;hidden&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bg-white rounded-3xl border border-black/10 p-7&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_a_kicker&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-xs font-semibold tracking-widest text-[#1a5049] uppercase&quot;</span><span class="s0">&gt;</span><span class="s1">Parcours A — Se former</span><span class="s0">&lt;/p&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">id</span><span class="s3">=&quot;t_a_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Monter en compétence sur les solutions bas-carbone en construction</span>
+            <span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_a_intro&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Former vos équipes aux enjeux, méthodes et matériaux de la construction durable.</span><span class="s0">&lt;/p&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 flex flex-col sm:flex-row gap-3&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;t_a_primary_link&quot; </span><span class="s2">href</span><span class="s3">=&quot;https://www.naturamater.eu/nos-services/formations&quot; </span><span class="s2">target</span><span class="s3">=&quot;_top&quot; </span><span class="s2">rel</span><span class="s3">=&quot;noopener&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold 
+                        border border-transparent hover:bg-[#14433d] hover:border-white/30 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_a_primary&quot;</span><span class="s0">&gt;</span><span class="s1">Découvrir le programme</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;contactLinkA&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] 
+                        hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_contact&quot;</span><span class="s0">&gt;</span><span class="s1">Nous contacter</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_positioning&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">Positionnement</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_a_pos&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span>
+                  <span class="s1">Un cycle de formations structuré pour acquérir une vision globale et opérationnelle de la construction à faible impact, de la structure aux finitions.</span>
+                <span class="s0">&lt;/p&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_for_who&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">Pour qui</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_a_forwho&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_pillars&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">Les piliers</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_a_pillars&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 rounded-3xl border border-black/10 bg-white p-5&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;h3 </span><span class="s2">id</span><span class="s3">=&quot;t_you_get&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot;</span><span class="s0">&gt;</span><span class="s1">Ce que vous obtenez</span><span class="s0">&lt;/h3&gt;</span>
+              <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_a_get&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s4">&lt;!-- STEP B --&gt;</span>
+        <span class="s0">&lt;section </span><span class="s2">data-step</span><span class="s3">=&quot;b&quot; </span><span class="s2">class</span><span class="s3">=&quot;hidden&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bg-white rounded-3xl border border-black/10 p-7&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_b_kicker&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-xs font-semibold tracking-widest text-[#1a5049] uppercase&quot;</span><span class="s0">&gt;</span><span class="s1">Parcours B — Être accompagné sur un projet</span><span class="s0">&lt;/p&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">id</span><span class="s3">=&quot;t_b_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Réduire l’impact carbone d’un projet immobilier concret</span>
+            <span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_b_intro&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Structurer les décisions bas-carbone dès les premières phases de projet.</span><span class="s0">&lt;/p&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 flex flex-col sm:flex-row gap-3&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;t_b_primary_link&quot; </span><span class="s2">href</span><span class="s3">=&quot;https://www.naturamater.eu/nos-services/workshops&quot; </span><span class="s2">target</span><span class="s3">=&quot;_top&quot; </span><span class="s2">rel</span><span class="s3">=&quot;noopener&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold 
+                        border border-transparent hover:bg-[#14433d] hover:border-white/30 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_b_primary&quot;</span><span class="s0">&gt;</span><span class="s1">Découvrir nos workshops</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;contactLinkB&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] 
+                        hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_contact_2&quot;</span><span class="s0">&gt;</span><span class="s1">Nous contacter</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_positioning_2&quot;</span><span class="s0">&gt;</span><span class="s1">Positionnement</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_b_pos&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span>
+                  <span class="s1">Des workshops d’accompagnement pour poser les bons arbitrages matériaux, systèmes et réemploi sur des projets immobiliers en cours ou à venir.</span>
+                <span class="s0">&lt;/p&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_for_who_2&quot;</span><span class="s0">&gt;</span><span class="s1">Pour qui</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_b_forwho&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_pillars_2&quot;</span><span class="s0">&gt;</span><span class="s1">Les piliers</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_b_pillars&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 rounded-3xl border border-black/10 bg-white p-5&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_you_get_2&quot;</span><span class="s0">&gt;</span><span class="s1">Ce que vous obtenez</span><span class="s0">&lt;/h3&gt;</span>
+              <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_b_get&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s4">&lt;!-- STEP C --&gt;</span>
+        <span class="s0">&lt;section </span><span class="s2">data-step</span><span class="s3">=&quot;c&quot; </span><span class="s2">class</span><span class="s3">=&quot;hidden&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bg-white rounded-3xl border border-black/10 p-7&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_c_kicker&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-xs font-semibold tracking-widest text-[#1a5049] uppercase&quot;</span><span class="s0">&gt;</span><span class="s1">Parcours C — Projet personnel</span><span class="s0">&lt;/p&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">id</span><span class="s3">=&quot;t_c_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Construire ou rénover un habitat sain et bas-carbone</span>
+            <span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_c_intro&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Faire les bons choix matériaux pour un projet confortable et durable.</span><span class="s0">&lt;/p&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 flex flex-col sm:flex-row gap-3&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;t_c_primary_link&quot; </span><span class="s2">href</span><span class="s3">=&quot;https://www.naturamater.eu/service-page/private-session?referral=service_list_widget&quot; </span><span class="s2">target</span><span class="s3">=&quot;_top&quot; </span><span class="s2">rel</span><span class="s3">=&quot;noopener&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold 
+                        border border-transparent hover:bg-[#14433d] hover:border-white/30 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_c_primary&quot;</span><span class="s0">&gt;</span><span class="s1">Découvrir la session privée</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;contactLinkC&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] 
+                        hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_contact_3&quot;</span><span class="s0">&gt;</span><span class="s1">Nous contacter</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_positioning_3&quot;</span><span class="s0">&gt;</span><span class="s1">Positionnement</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_c_pos&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span>
+                  <span class="s1">Une session privée d’accompagnement dédiée aux petits projets de construction ou rénovation, centrée sur le confort, la santé et l’impact environnemental.</span>
+                <span class="s0">&lt;/p&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_for_who_3&quot;</span><span class="s0">&gt;</span><span class="s1">Pour qui</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_c_forwho&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_pillars_3&quot;</span><span class="s0">&gt;</span><span class="s1">Les piliers</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_c_pillars&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 rounded-3xl border border-black/10 bg-white p-5&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_you_get_3&quot;</span><span class="s0">&gt;</span><span class="s1">Ce que vous obtenez</span><span class="s0">&lt;/h3&gt;</span>
+              <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_c_get&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s4">&lt;!-- STEP D --&gt;</span>
+        <span class="s0">&lt;section </span><span class="s2">data-step</span><span class="s3">=&quot;d&quot; </span><span class="s2">class</span><span class="s3">=&quot;hidden&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bg-white rounded-3xl border border-black/10 p-7&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_d_kicker&quot; </span><span class="s2">class</span><span class="s3">=&quot;text-xs font-semibold tracking-widest text-[#1a5049] uppercase&quot;</span><span class="s0">&gt;</span><span class="s1">Parcours D — Producteurs de matériaux</span><span class="s0">&lt;/p&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">id</span><span class="s3">=&quot;t_d_title&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]&quot;</span><span class="s0">&gt;</span>
+              <span class="s1">Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment</span>
+            <span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_d_intro&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 text-black/70&quot;</span><span class="s0">&gt;</span><span class="s1">Intégrer votre solution durable à la matérathèque Natura Mater.</span><span class="s0">&lt;/p&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 flex flex-col sm:flex-row gap-3&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;a </span><span class="s2">id</span><span class="s3">=&quot;contactLinkD&quot;</span>
+                 <span class="s2">class</span><span class="s3">=&quot;group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold 
+                        border border-transparent hover:bg-[#14433d] hover:border-white/30 transition&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;t_contact_4&quot;</span><span class="s0">&gt;</span><span class="s1">Nous contacter</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold&quot;</span><span class="s0">&gt;</span><span class="s1">→</span><span class="s0">&lt;/span&gt;</span>
+              <span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_positioning_4&quot;</span><span class="s0">&gt;</span><span class="s1">Positionnement</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;t_d_pos&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-2 text-black/70&quot;</span><span class="s0">&gt;</span>
+                  <span class="s1">Un programme de partenariat permettant aux producteurs de matériaux de gagner en visibilité, crédibilité et mise en relation avec un réseau qualifié.</span>
+                <span class="s0">&lt;/p&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_for_who_4&quot;</span><span class="s0">&gt;</span><span class="s1">Pour qui</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_d_forwho&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+
+              <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;rounded-3xl bg-[#ece4da] border border-black/10 p-5&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_pillars_4&quot;</span><span class="s0">&gt;</span><span class="s1">Les piliers</span><span class="s0">&lt;/h3&gt;</span>
+                <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_d_pillars&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+              <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mt-6 rounded-3xl border border-black/10 bg-white p-5&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;h3 </span><span class="s2">class</span><span class="s3">=&quot;text-lg font-semibold text-[#1a5049]&quot; </span><span class="s2">id</span><span class="s3">=&quot;t_you_get_4&quot;</span><span class="s0">&gt;</span><span class="s1">Ce que vous obtenez</span><span class="s0">&lt;/h3&gt;</span>
+              <span class="s0">&lt;ul </span><span class="s2">id</span><span class="s3">=&quot;t_d_get&quot; </span><span class="s2">class</span><span class="s3">=&quot;mt-3 space-y-2 text-black/70 list-disc pl-5&quot;</span><span class="s0">&gt;&lt;/ul&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+
+      <span class="s4">&lt;!-- footer hint --&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;t_footer&quot; </span><span class="s2">class</span><span class="s3">=&quot;px-6 py-4 bg-white border-t border-black/10 text-sm text-black/60&quot;</span><span class="s0">&gt;</span>
+        <span class="s1">Astuce : vous pouvez fermer à tout moment (ESC) et revenir au site.</span>
+      <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;/div&gt;</span>
+
+  <span class="s0">&lt;script&gt;</span>
+    <span class="s1">// ---------- i18n ----------</span>
+    <span class="s1">const i18n = {</span>
+      <span class="s1">fr: {</span>
+        <span class="s1">top_sub: &quot;Accompagnement — choisissez un parcours&quot;,</span>
+        <span class="s1">back: &quot;Retour&quot;,</span>
+        <span class="s1">close: &quot;Fermer&quot;,</span>
+        <span class="s1">home_title: &quot;Dans quel cadre souhaitez-vous agir aujourd’hui ?&quot;,</span>
+        <span class="s1">home_desc: &quot;Choisissez l’option qui correspond le mieux à votre situation actuelle.&quot;,</span>
+
+        <span class="s1">a_card_title: &quot;A — Se former&quot;,</span>
+        <span class="s1">a_card_desc: &quot;Monter en compétence ou former une équipe aux solutions bas-carbone.&quot;,</span>
+        <span class="s1">b_card_title: &quot;B — Être accompagné sur un projet&quot;,</span>
+        <span class="s1">b_card_desc: &quot;Réduire l’impact carbone d’un projet immobilier concret.&quot;,</span>
+        <span class="s1">c_card_title: &quot;C — Projet personnel&quot;,</span>
+        <span class="s1">c_card_desc: &quot;Construire ou rénover un habitat sain et bas-carbone.&quot;,</span>
+        <span class="s1">d_card_title: &quot;D — Producteurs de matériaux&quot;,</span>
+        <span class="s1">d_card_desc: &quot;Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment.&quot;,</span>
+
+        <span class="s1">positioning: &quot;Positionnement&quot;,</span>
+        <span class="s1">for_who: &quot;Pour qui&quot;,</span>
+        <span class="s1">pillars: &quot;Les piliers&quot;,</span>
+        <span class="s1">you_get: &quot;Ce que vous obtenez&quot;,</span>
+        <span class="s1">contact: &quot;Nous contacter&quot;,</span>
+
+        <span class="s1">a_kicker: &quot;Parcours A — Se former&quot;,</span>
+        <span class="s1">a_title: &quot;Monter en compétence sur les solutions bas-carbone en construction&quot;,</span>
+        <span class="s1">a_intro: &quot;Former vos équipes aux enjeux, méthodes et matériaux de la construction durable.&quot;,</span>
+        <span class="s1">a_primary: &quot;Découvrir le programme&quot;,</span>
+        <span class="s1">a_pos: &quot;Un cycle de formations structuré pour acquérir une vision globale et opérationnelle de la construction à faible impact, de la structure aux finitions.&quot;,</span>
+        <span class="s1">a_forwho: [&quot;Architectes indépendants&quot;,&quot;Bureaux d’architecture&quot;,&quot;Bureaux d’étude&quot;,&quot;Équipes projets et décisionnaires&quot;],</span>
+        <span class="s1">a_pillars: [&quot;Matériaux bio et géosourcés&quot;,&quot;Réemploi et filières de recyclage&quot;,&quot;Méthodologie bas-carbone&quot;,&quot;Retours d’expérience projets&quot;,&quot;Cadre réglementaire et labels&quot;],</span>
+        <span class="s1">a_get: [&quot;6 modules de formation (2h / module)&quot;,&quot;Une vision complète des leviers bas-carbone&quot;,&quot;Des connaissances directement applicables&quot;,&quot;Un échange structuré autour de cas concrets&quot;],</span>
+
+        <span class="s1">b_kicker: &quot;Parcours B — Être accompagné sur un projet&quot;,</span>
+        <span class="s1">b_title: &quot;Réduire l’impact carbone d’un projet immobilier concret&quot;,</span>
+        <span class="s1">b_intro: &quot;Structurer les décisions bas-carbone dès les premières phases de projet.&quot;,</span>
+        <span class="s1">b_primary: &quot;Découvrir nos workshops&quot;,</span>
+        <span class="s1">b_pos: &quot;Des workshops d’accompagnement pour poser les bons arbitrages matériaux, systèmes et réemploi sur des projets immobiliers en cours ou à venir.&quot;,</span>
+        <span class="s1">b_forwho: [&quot;Architectes&quot;,&quot;Bureaux d’étude&quot;,&quot;Développeurs et promoteurs immobiliers&quot;,&quot;Équipes projet pluridisciplinaires&quot;],</span>
+        <span class="s1">b_pillars: [&quot;Analyse globale du projet&quot;,&quot;Choix matériaux et systèmes&quot;,&quot;Réemploi et économie circulaire&quot;,&quot;Faisabilité technique&quot;,&quot;Impact carbone et performance&quot;],</span>
+        <span class="s1">b_get: [&quot;Workshops d’accompagnement (2h)&quot;,&quot;Sessions exploratoires ciblées&quot;,&quot;Rapports matériaux et recommandations&quot;,&quot;Suivi technique selon les formats&quot;],</span>
+
+        <span class="s1">c_kicker: &quot;Parcours C — Projet personnel&quot;,</span>
+        <span class="s1">c_title: &quot;Construire ou rénover un habitat sain et bas-carbone&quot;,</span>
+        <span class="s1">c_intro: &quot;Faire les bons choix matériaux pour un projet confortable et durable.&quot;,</span>
+        <span class="s1">c_primary: &quot;Découvrir la session privée&quot;,</span>
+        <span class="s1">c_pos: &quot;Une session privée d’accompagnement dédiée aux petits projets de construction ou rénovation, centrée sur le confort, la santé et l’impact environnemental.&quot;,</span>
+        <span class="s1">c_forwho: [&quot;Particuliers&quot;,&quot;Architectes indépendants&quot;,&quot;Petits projets (&lt; 200 m²)&quot;],</span>
+        <span class="s1">c_pillars: [&quot;Santé et qualité de l’air intérieur&quot;,&quot;Confort thermique et acoustique&quot;,&quot;Matériaux non polluants&quot;,&quot;Solutions bas-carbone accessibles&quot;],</span>
+        <span class="s1">c_get: [&quot;Session privée de 90 minutes&quot;,&quot;Inspiration concrète via la matérathèque&quot;,&quot;Recommandations adaptées à votre projet&quot;,&quot;Clarté sur les choix possibles&quot;],</span>
+
+        <span class="s1">d_kicker: &quot;Parcours D — Producteurs de matériaux&quot;,</span>
+        <span class="s1">d_title: &quot;Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment&quot;,</span>
+        <span class="s1">d_intro: &quot;Intégrer votre solution durable à la matérathèque Natura Mater.&quot;,</span>
+        <span class="s1">d_pos: &quot;Un programme de partenariat permettant aux producteurs de matériaux de gagner en visibilité, crédibilité et mise en relation avec un réseau qualifié.&quot;,</span>
+        <span class="s1">d_forwho: [&quot;Producteurs de matériaux biosourcés&quot;,&quot;Fabricants de solutions bas-carbone&quot;,&quot;Acteurs du recyclage et du réemploi&quot;,&quot;Industriels engagés&quot;],</span>
+        <span class="s1">d_pillars: [&quot;Matériaux biosourcés et recyclés&quot;,&quot;Innovation bas-carbone&quot;,&quot;Transparence et traçabilité&quot;,&quot;Mise en réseau professionnelle&quot;],</span>
+        <span class="s1">d_get: [&quot;Intégration à la matérathèque&quot;,&quot;Accès à un réseau de +4000 professionnels&quot;,&quot;Visibilité auprès de prescripteurs&quot;,&quot;3 formules de partenariat adaptées&quot;],</span>
+
+        <span class="s1">footer: &quot;Astuce : vous pouvez fermer à tout moment (ESC) et revenir au site.&quot;</span>
+      <span class="s1">},</span>
+
+      <span class="s1">en: {</span>
+        <span class="s1">top_sub: &quot;Guidance — choose a path&quot;,</span>
+        <span class="s1">back: &quot;Back&quot;,</span>
+        <span class="s1">close: &quot;Close&quot;,</span>
+        <span class="s1">home_title: &quot;In which context do you want to act today?&quot;,</span>
+        <span class="s1">home_desc: &quot;Choose the option that best matches your current situation.&quot;,</span>
+
+        <span class="s1">a_card_title: &quot;A — Training&quot;,</span>
+        <span class="s1">a_card_desc: &quot;Build skills or train a team on low-carbon solutions.&quot;,</span>
+        <span class="s1">b_card_title: &quot;B — Project support&quot;,</span>
+        <span class="s1">b_card_desc: &quot;Reduce the carbon impact of a real estate project.&quot;,</span>
+        <span class="s1">c_card_title: &quot;C — Personal project&quot;,</span>
+        <span class="s1">c_card_desc: &quot;Build or renovate a healthy, low-carbon home.&quot;,</span>
+        <span class="s1">d_card_title: &quot;D — Material producers&quot;,</span>
+        <span class="s1">d_card_desc: &quot;Showcase your low-carbon solutions to building professionals.&quot;,</span>
+
+        <span class="s1">positioning: &quot;Positioning&quot;,</span>
+        <span class="s1">for_who: &quot;Who it’s for&quot;,</span>
+        <span class="s1">pillars: &quot;Key pillars&quot;,</span>
+        <span class="s1">you_get: &quot;What you get&quot;,</span>
+        <span class="s1">contact: &quot;Contact us&quot;,</span>
+
+        <span class="s1">a_kicker: &quot;Path A — Training&quot;,</span>
+        <span class="s1">a_title: &quot;Build skills on low-carbon solutions in construction&quot;,</span>
+        <span class="s1">a_intro: &quot;Train your teams on the challenges, methods and materials of sustainable construction.&quot;,</span>
+        <span class="s1">a_primary: &quot;View the training program&quot;,</span>
+        <span class="s1">a_pos: &quot;A structured training cycle to gain a comprehensive, practical view of low-impact construction, from structure to finishes.&quot;,</span>
+        <span class="s1">a_forwho: [&quot;Independent architects&quot;,&quot;Architecture firms&quot;,&quot;Engineering offices&quot;,&quot;Project teams &amp; decision-makers&quot;],</span>
+        <span class="s1">a_pillars: [&quot;Bio-based &amp; geo-sourced materials&quot;,&quot;Reuse &amp; recycling supply chains&quot;,&quot;Low-carbon methodology&quot;,&quot;Project experience feedback&quot;,&quot;Regulations &amp; labels&quot;],</span>
+        <span class="s1">a_get: [&quot;6 training modules (2h each)&quot;,&quot;A complete view of low-carbon levers&quot;,&quot;Immediately applicable knowledge&quot;,&quot;A structured discussion on real cases&quot;],</span>
+
+        <span class="s1">b_kicker: &quot;Path B — Project support&quot;,</span>
+        <span class="s1">b_title: &quot;Reduce the carbon impact of a real estate project&quot;,</span>
+        <span class="s1">b_intro: &quot;Structure low-carbon decisions from the earliest project phases.&quot;,</span>
+        <span class="s1">b_primary: &quot;Explore our workshops&quot;,</span>
+        <span class="s1">b_pos: &quot;Support workshops to make the right trade-offs on materials, systems and reuse for ongoing or upcoming projects.&quot;,</span>
+        <span class="s1">b_forwho: [&quot;Architects&quot;,&quot;Engineering offices&quot;,&quot;Developers &amp; real estate promoters&quot;,&quot;Multidisciplinary project teams&quot;],</span>
+        <span class="s1">b_pillars: [&quot;Overall project analysis&quot;,&quot;Materials &amp; systems choices&quot;,&quot;Reuse &amp; circular economy&quot;,&quot;Technical feasibility&quot;,&quot;Carbon impact &amp; performance&quot;],</span>
+        <span class="s1">b_get: [&quot;Support workshops (2h)&quot;,&quot;Targeted exploratory sessions&quot;,&quot;Material reports &amp; recommendations&quot;,&quot;Technical follow-up depending on format&quot;],</span>
+
+        <span class="s1">c_kicker: &quot;Path C — Personal project&quot;,</span>
+        <span class="s1">c_title: &quot;Build or renovate a healthy, low-carbon home&quot;,</span>
+        <span class="s1">c_intro: &quot;Make the right material choices for a comfortable, durable project.&quot;,</span>
+        <span class="s1">c_primary: &quot;Discover the private session&quot;,</span>
+        <span class="s1">c_pos: &quot;A private support session for small construction/renovation projects, focused on comfort, health and environmental impact.&quot;,</span>
+        <span class="s1">c_forwho: [&quot;Individuals&quot;,&quot;Independent architects&quot;,&quot;Small projects (&lt; 200 m²)&quot;],</span>
+        <span class="s1">c_pillars: [&quot;Health &amp; indoor air quality&quot;,&quot;Thermal &amp; acoustic comfort&quot;,&quot;Non-polluting materials&quot;,&quot;Accessible low-carbon solutions&quot;],</span>
+        <span class="s1">c_get: [&quot;90-minute private session&quot;,&quot;Concrete inspiration via our materials library&quot;,&quot;Recommendations tailored to your project&quot;,&quot;Clarity on the available options&quot;],</span>
+
+        <span class="s1">d_kicker: &quot;Path D — Material producers&quot;,</span>
+        <span class="s1">d_title: &quot;Showcase your low-carbon solutions to building professionals&quot;,</span>
+        <span class="s1">d_intro: &quot;Integrate your sustainable solution into the Natura Mater materials library.&quot;,</span>
+        <span class="s1">d_pos: &quot;A partnership program helping producers gain visibility, credibility and connections with a qualified network.&quot;,</span>
+        <span class="s1">d_forwho: [&quot;Bio-based material producers&quot;,&quot;Low-carbon solution manufacturers&quot;,&quot;Recycling &amp; reuse players&quot;,&quot;Committed industrial partners&quot;],</span>
+        <span class="s1">d_pillars: [&quot;Bio-based &amp; recycled materials&quot;,&quot;Low-carbon innovation&quot;,&quot;Transparency &amp; traceability&quot;,&quot;Professional networking&quot;],</span>
+        <span class="s1">d_get: [&quot;Inclusion in the materials library&quot;,&quot;Access to a network of 4,000+ professionals&quot;,&quot;Visibility with specifiers&quot;,&quot;3 partnership options&quot;],</span>
+
+        <span class="s1">footer: &quot;Tip: you can close anytime (ESC) and return to the website.&quot;</span>
+      <span class="s1">},</span>
+
+      <span class="s1">nl: {</span>
+        <span class="s1">top_sub: &quot;Begeleiding — kies een traject&quot;,</span>
+        <span class="s1">back: &quot;Terug&quot;,</span>
+        <span class="s1">close: &quot;Sluiten&quot;,</span>
+        <span class="s1">home_title: &quot;In welke context wil je vandaag handelen?&quot;,</span>
+        <span class="s1">home_desc: &quot;Kies de optie die het best past bij je huidige situatie.&quot;,</span>
+
+        <span class="s1">a_card_title: &quot;A — Opleiding&quot;,</span>
+        <span class="s1">a_card_desc: &quot;Je kennis vergroten of een team opleiden in laag-koolstofoplossingen.&quot;,</span>
+        <span class="s1">b_card_title: &quot;B — Begeleiding bij een project&quot;,</span>
+        <span class="s1">b_card_desc: &quot;De CO₂-impact van een concreet vastgoedproject verlagen.&quot;,</span>
+        <span class="s1">c_card_title: &quot;C — Persoonlijk project&quot;,</span>
+        <span class="s1">c_card_desc: &quot;Een gezonde, laag-koolstof woning bouwen of renoveren.&quot;,</span>
+        <span class="s1">d_card_title: &quot;D — Materiaalproducenten&quot;,</span>
+        <span class="s1">d_card_desc: &quot;Je laag-koolstofoplossingen zichtbaar maken bij bouwprofessionals.&quot;,</span>
+
+        <span class="s1">positioning: &quot;Positionering&quot;,</span>
+        <span class="s1">for_who: &quot;Voor wie&quot;,</span>
+        <span class="s1">pillars: &quot;Pijlers&quot;,</span>
+        <span class="s1">you_get: &quot;Wat je krijgt&quot;,</span>
+        <span class="s1">contact: &quot;Contacteer ons&quot;,</span>
+
+        <span class="s1">a_kicker: &quot;Traject A — Opleiding&quot;,</span>
+        <span class="s1">a_title: &quot;Kennis opbouwen over laag-koolstofoplossingen in de bouw&quot;,</span>
+        <span class="s1">a_intro: &quot;Opleid je teams rond uitdagingen, methodes en materialen voor duurzame bouw.&quot;,</span>
+        <span class="s1">a_primary: &quot;Bekijk het programma&quot;,</span>
+        <span class="s1">a_pos: &quot;Een gestructureerde opleidingscyclus om een globale en praktische kijk te krijgen op bouwen met lage impact, van structuur tot afwerking.&quot;,</span>
+        <span class="s1">a_forwho: [&quot;Zelfstandige architecten&quot;,&quot;Architectenbureaus&quot;,&quot;Studiebureaus&quot;,&quot;Projectteams &amp; beslissers&quot;],</span>
+        <span class="s1">a_pillars: [&quot;Bio- en geo-gebonden materialen&quot;,&quot;Hergebruik &amp; recyclageketens&quot;,&quot;Laag-koolstofmethodologie&quot;,&quot;Projectervaringen&quot;,&quot;Regelgeving &amp; labels&quot;],</span>
+        <span class="s1">a_get: [&quot;6 opleidingsmodules (2u per module)&quot;,&quot;Een volledig beeld van laag-koolstofhefbomen&quot;,&quot;Direct toepasbare kennis&quot;,&quot;Gestructureerde uitwisseling rond cases&quot;],</span>
+
+        <span class="s1">b_kicker: &quot;Traject B — Begeleiding bij een project&quot;,</span>
+        <span class="s1">b_title: &quot;De CO₂-impact van een concreet vastgoedproject verlagen&quot;,</span>
+        <span class="s1">b_intro: &quot;Laag-koolstofkeuzes structureren vanaf de eerste projectfases.&quot;,</span>
+        <span class="s1">b_primary: &quot;Ontdek onze workshops&quot;,</span>
+        <span class="s1">b_pos: &quot;Begeleidingsworkshops om de juiste keuzes te maken rond materialen, systemen en hergebruik voor lopende of toekomstige projecten.&quot;,</span>
+        <span class="s1">b_forwho: [&quot;Architecten&quot;,&quot;Studiebureaus&quot;,&quot;Ontwikkelaars &amp; vastgoedpromotoren&quot;,&quot;Multidisciplinaire projectteams&quot;],</span>
+        <span class="s1">b_pillars: [&quot;Globale projectanalyse&quot;,&quot;Keuze van materialen &amp; systemen&quot;,&quot;Hergebruik &amp; circulaire economie&quot;,&quot;Technische haalbaarheid&quot;,&quot;CO₂-impact &amp; prestaties&quot;],</span>
+        <span class="s1">b_get: [&quot;Begeleidingsworkshops (2u)&quot;,&quot;Gerichte verkennende sessies&quot;,&quot;Materiaaldossiers &amp; aanbevelingen&quot;,&quot;Technische opvolging volgens formaat&quot;],</span>
+
+        <span class="s1">c_kicker: &quot;Traject C — Persoonlijk project&quot;,</span>
+        <span class="s1">c_title: &quot;Een gezonde, laag-koolstof woning bouwen of renoveren&quot;,</span>
+        <span class="s1">c_intro: &quot;De juiste materiaalkeuzes voor een comfortabel en duurzaam project.&quot;,</span>
+        <span class="s1">c_primary: &quot;Ontdek de privésessie&quot;,</span>
+        <span class="s1">c_pos: &quot;Een privésessie begeleiding voor kleine bouw- of renovatieprojecten, met focus op comfort, gezondheid en milieu-impact.&quot;,</span>
+        <span class="s1">c_forwho: [&quot;Particulieren&quot;,&quot;Zelfstandige architecten&quot;,&quot;Kleine projecten (&lt; 200 m²)&quot;],</span>
+        <span class="s1">c_pillars: [&quot;Gezondheid &amp; binnenluchtkwaliteit&quot;,&quot;Thermisch &amp; akoestisch comfort&quot;,&quot;Niet-vervuilende materialen&quot;,&quot;Toegankelijke laag-koolstofoplossingen&quot;],</span>
+        <span class="s1">c_get: [&quot;Privésessie van 90 minuten&quot;,&quot;Concrete inspiratie via de materialenbibliotheek&quot;,&quot;Aanbevelingen op maat van je project&quot;,&quot;Duidelijkheid over mogelijke keuzes&quot;],</span>
+
+        <span class="s1">d_kicker: &quot;Traject D — Materiaalproducenten&quot;,</span>
+        <span class="s1">d_title: &quot;Je laag-koolstofoplossingen zichtbaar maken bij bouwprofessionals&quot;,</span>
+        <span class="s1">d_intro: &quot;Integreer je duurzame oplossing in de Natura Mater materialenbibliotheek.&quot;,</span>
+        <span class="s1">d_pos: &quot;Een partnerprogramma waarmee producenten meer zichtbaarheid, geloofwaardigheid en connecties met een gekwalificeerd netwerk krijgen.&quot;,</span>
+        <span class="s1">d_forwho: [&quot;Producenten van biogebaseerde materialen&quot;,&quot;Fabrikanten van laag-koolstofoplossingen&quot;,&quot;Spelers in recyclage &amp; hergebruik&quot;,&quot;Engageerde industriële partners&quot;],</span>
+        <span class="s1">d_pillars: [&quot;Biogebaseerde &amp; gerecycleerde materialen&quot;,&quot;Laag-koolstofinnovatie&quot;,&quot;Transparantie &amp; traceerbaarheid&quot;,&quot;Professioneel netwerk&quot;],</span>
+        <span class="s1">d_get: [&quot;Opname in de materialenbibliotheek&quot;,&quot;Toegang tot een netwerk van 4.000+ professionals&quot;,&quot;Zichtbaarheid bij voorschrijvers&quot;,&quot;3 partnerformules&quot;],</span>
+
+        <span class="s1">footer: &quot;Tip: je kan op elk moment sluiten (ESC) en terugkeren naar de site.&quot;</span>
+      <span class="s1">}</span>
+    <span class="s1">};</span>
+
+    <span class="s1">function detectLang() {</span>
+      <span class="s1">// 1) Query param ?lang=</span>
+      <span class="s1">const params = new URLSearchParams(window.location.search);</span>
+      <span class="s1">const q = (params.get('lang') || '').toLowerCase();</span>
+      <span class="s1">if (q.startsWith('en')) return 'en';</span>
+      <span class="s1">if (q.startsWith('nl')) return 'nl';</span>
+
+      <span class="s1">// 2) &lt;html lang=&quot;...&quot;&gt;</span>
+      <span class="s1">const hl = (document.documentElement.lang || '').toLowerCase();</span>
+      <span class="s1">if (hl.startsWith('en')) return 'en';</span>
+      <span class="s1">if (hl.startsWith('nl')) return 'nl';</span>
+
+      <span class="s1">// 3) path /en /nl (au cas où)</span>
+      <span class="s1">const p = (window.location.pathname || '').toLowerCase();</span>
+      <span class="s1">if (p === '/en' || p.startsWith('/en/')) return 'en';</span>
+      <span class="s1">if (p === '/nl' || p.startsWith('/nl/')) return 'nl';</span>
+
+      <span class="s1">// 4) navigator</span>
+      <span class="s1">const nav = (navigator.language || '').toLowerCase();</span>
+      <span class="s1">if (nav.startsWith('en')) return 'en';</span>
+      <span class="s1">if (nav.startsWith('nl')) return 'nl';</span>
+
+      <span class="s1">return 'fr';</span>
+    <span class="s1">}</span>
+
+    <span class="s1">function setText(id, value) {</span>
+      <span class="s1">const el = document.getElementById(id);</span>
+      <span class="s1">if (!el) return;</span>
+      <span class="s1">el.textContent = value;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">function setList(id, items) {</span>
+      <span class="s1">const ul = document.getElementById(id);</span>
+      <span class="s1">if (!ul) return;</span>
+      <span class="s1">ul.innerHTML = '';</span>
+      <span class="s1">(items || []).forEach(t =&gt; {</span>
+        <span class="s1">const li = document.createElement('li');</span>
+        <span class="s1">li.textContent = t;</span>
+        <span class="s1">ul.appendChild(li);</span>
+      <span class="s1">});</span>
+    <span class="s1">}</span>
+
+    <span class="s1">function contactHrefForLang(lang) {</span>
+      <span class="s1">// Tu as demandé: corriger le lien contact selon les langues (/en et /nl)</span>
+      <span class="s1">const base = window.location.origin || 'https://www.naturamater.eu';</span>
+      <span class="s1">const prefix = lang === 'en' ? '/en' : (lang === 'nl' ? '/nl' : '');</span>
+      <span class="s1">return base + prefix + '/contact-9';</span>
+    <span class="s1">}</span>
+
+    <span class="s1">function applyI18n(lang) {</span>
+      <span class="s1">const t = i18n[lang] || i18n.fr;</span>
+      <span class="s1">document.documentElement.lang = lang;</span>
+
+      <span class="s1">setText('t_top_sub', t.top_sub);</span>
+      <span class="s1">setText('t_back', t.back);</span>
+      <span class="s1">setText('t_close', t.close);</span>
+
+      <span class="s1">setText('t_home_title', t.home_title);</span>
+      <span class="s1">setText('t_home_desc', t.home_desc);</span>
+
+      <span class="s1">setText('t_a_card_title', t.a_card_title);</span>
+      <span class="s1">setText('t_a_card_desc', t.a_card_desc);</span>
+      <span class="s1">setText('t_b_card_title', t.b_card_title);</span>
+      <span class="s1">setText('t_b_card_desc', t.b_card_desc);</span>
+      <span class="s1">setText('t_c_card_title', t.c_card_title);</span>
+      <span class="s1">setText('t_c_card_desc', t.c_card_desc);</span>
+      <span class="s1">setText('t_d_card_title', t.d_card_title);</span>
+      <span class="s1">setText('t_d_card_desc', t.d_card_desc);</span>
+
+      <span class="s1">setText('t_positioning', t.positioning);</span>
+      <span class="s1">setText('t_for_who', t.for_who);</span>
+      <span class="s1">setText('t_pillars', t.pillars);</span>
+      <span class="s1">setText('t_you_get', t.you_get);</span>
+
+      <span class="s1">setText('t_positioning_2', t.positioning);</span>
+      <span class="s1">setText('t_for_who_2', t.for_who);</span>
+      <span class="s1">setText('t_pillars_2', t.pillars);</span>
+      <span class="s1">setText('t_you_get_2', t.you_get);</span>
+
+      <span class="s1">setText('t_positioning_3', t.positioning);</span>
+      <span class="s1">setText('t_for_who_3', t.for_who);</span>
+      <span class="s1">setText('t_pillars_3', t.pillars);</span>
+      <span class="s1">setText('t_you_get_3', t.you_get);</span>
+
+      <span class="s1">setText('t_positioning_4', t.positioning);</span>
+      <span class="s1">setText('t_for_who_4', t.for_who);</span>
+      <span class="s1">setText('t_pillars_4', t.pillars);</span>
+      <span class="s1">setText('t_you_get_4', t.you_get);</span>
+
+      <span class="s1">setText('t_contact', t.contact);</span>
+      <span class="s1">setText('t_contact_2', t.contact);</span>
+      <span class="s1">setText('t_contact_3', t.contact);</span>
+      <span class="s1">setText('t_contact_4', t.contact);</span>
+
+      <span class="s1">// A</span>
+      <span class="s1">setText('t_a_kicker', t.a_kicker);</span>
+      <span class="s1">setText('t_a_title', t.a_title);</span>
+      <span class="s1">setText('t_a_intro', t.a_intro);</span>
+      <span class="s1">setText('t_a_primary', t.a_primary);</span>
+      <span class="s1">setText('t_a_pos', t.a_pos);</span>
+      <span class="s1">setList('t_a_forwho', t.a_forwho);</span>
+      <span class="s1">setList('t_a_pillars', t.a_pillars);</span>
+      <span class="s1">setList('t_a_get', t.a_get);</span>
+
+      <span class="s1">// B</span>
+      <span class="s1">setText('t_b_kicker', t.b_kicker);</span>
+      <span class="s1">setText('t_b_title', t.b_title);</span>
+      <span class="s1">setText('t_b_intro', t.b_intro);</span>
+      <span class="s1">setText('t_b_primary', t.b_primary);</span>
+      <span class="s1">setText('t_b_pos', t.b_pos);</span>
+      <span class="s1">setList('t_b_forwho', t.b_forwho);</span>
+      <span class="s1">setList('t_b_pillars', t.b_pillars);</span>
+      <span class="s1">setList('t_b_get', t.b_get);</span>
+
+      <span class="s1">// C</span>
+      <span class="s1">setText('t_c_kicker', t.c_kicker);</span>
+      <span class="s1">setText('t_c_title', t.c_title);</span>
+      <span class="s1">setText('t_c_intro', t.c_intro);</span>
+      <span class="s1">setText('t_c_primary', t.c_primary);</span>
+      <span class="s1">setText('t_c_pos', t.c_pos);</span>
+      <span class="s1">setList('t_c_forwho', t.c_forwho);</span>
+      <span class="s1">setList('t_c_pillars', t.c_pillars);</span>
+      <span class="s1">setList('t_c_get', t.c_get);</span>
+
+      <span class="s1">// D</span>
+      <span class="s1">setText('t_d_kicker', t.d_kicker);</span>
+      <span class="s1">setText('t_d_title', t.d_title);</span>
+      <span class="s1">setText('t_d_intro', t.d_intro);</span>
+      <span class="s1">setText('t_d_pos', t.d_pos);</span>
+      <span class="s1">setList('t_d_forwho', t.d_forwho);</span>
+      <span class="s1">setList('t_d_pillars', t.d_pillars);</span>
+      <span class="s1">setList('t_d_get', t.d_get);</span>
+
+      <span class="s1">setText('t_footer', t.footer);</span>
+
+    <span class="s1">// Contact links (lang-aware) — SAFE (no function declaration here)</span>
+<span class="s1">try {</span>
+  <span class="s1">const base = 'https://www.naturamater.eu';</span>
+  <span class="s1">const prefix = lang === 'en' ? '/en' : (lang === 'nl' ? '/nl' : '');</span>
+  <span class="s1">const contactHref = base + prefix + '/contact-9';</span>
+
+  <span class="s1">['contactLinkA','contactLinkB','contactLinkC','contactLinkD'].forEach((id) =&gt; {</span>
+    <span class="s1">const a = document.getElementById(id);</span>
+    <span class="s1">if (!a) return;</span>
+    <span class="s1">a.href = contactHref;</span>
+    <span class="s1">a.target = '_top';</span>
+    <span class="s1">a.rel = 'noopener';</span>
+  <span class="s1">});</span>
+<span class="s1">} catch (e) {</span>
+  <span class="s1">console.error('Contact links init failed', e);</span>
+<span class="s1">}</span>
+
+<span class="s1">}</span>
+    <span class="s1">// ---------- Funnel navigation ----------</span>
+    <span class="s1">function normalizeStep(v) { return (v || '').toString().trim().toLowerCase(); }</span>
+
+    <span class="s1">function showStep(stepRaw) {</span>
+      <span class="s1">const step = normalizeStep(stepRaw);</span>
+      <span class="s1">const stepSections = Array.from(document.querySelectorAll('[data-step]'));</span>
+      <span class="s1">const backBtn = document.querySelector('[data-back]');</span>
+
+      <span class="s1">const exists = stepSections.some(s =&gt; normalizeStep(s.getAttribute('data-step')) === step);</span>
+      <span class="s1">const safeStep = exists ? step : 'home';</span>
+
+      <span class="s1">stepSections.forEach(s =&gt; {</span>
+        <span class="s1">s.classList.toggle('hidden', normalizeStep(s.getAttribute('data-step')) !== safeStep);</span>
+      <span class="s1">});</span>
+
+      <span class="s1">if (backBtn) backBtn.classList.toggle('hidden', safeStep === 'home');</span>
+    <span class="s1">}</span>
+
+    <span class="s1">// Init</span>
+    <span class="s1">(function init() {</span>
+      <span class="s1">const lang = detectLang();</span>
+      <span class="s1">applyI18n(lang);</span>
+      <span class="s1">showStep('home');</span>
+
+      <span class="s1">// Event delegation</span>
+      <span class="s1">document.addEventListener('click', (e) =&gt; {</span>
+        <span class="s1">const closeEl = e.target.closest('[data-close-funnel]');</span>
+        <span class="s1">if (closeEl) {</span>
+          <span class="s1">e.preventDefault();</span>
+          <span class="s1">// Ferme l'overlay côté WIX via postMessage (si intégré), sinon essaye window.close</span>
+          <span class="s1">try { window.parent.postMessage({ type: 'NM_FUNNEL_CLOSE' }, '*'); } catch (_) {}</span>
+          <span class="s1">return;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">const backEl = e.target.closest('[data-back]');</span>
+        <span class="s1">if (backEl) { e.preventDefault(); showStep('home'); return; }</span>
+
+        <span class="s1">const gotoEl = e.target.closest('[data-goto]');</span>
+        <span class="s1">if (gotoEl) { e.preventDefault(); showStep(gotoEl.getAttribute('data-goto')); }</span>
+      <span class="s1">});</span>
+
+      <span class="s1">document.addEventListener('keydown', (e) =&gt; {</span>
+        <span class="s1">if (e.key === 'Escape') {</span>
+          <span class="s1">try { window.parent.postMessage({ type: 'NM_FUNNEL_CLOSE' }, '*'); } catch (_) {}</span>
+        <span class="s1">}</span>
+      <span class="s1">});</span>
+    <span class="s1">})();</span>
+  <span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>
