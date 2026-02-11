@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Natura Mater — Funnel</title>
+</head>
+
+<body class="bg-transparent text-black/80">
+
+  <!-- BANDEAU CTA -->
+  <div class="p-4">
+    <div class="mx-auto max-w-4xl bg-white rounded-3xl border border-black/10 p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1">
+        <p class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Natura Mater</p>
+        <p id="t_cta_title" class="mt-1 text-base md:text-lg font-semibold text-[#1a5049]">Explorez les solutions bas-carbone pour votre projet</p>
+        <p id="t_cta_sub" class="mt-1 text-sm text-black/60">Répondez en 15 secondes — on vous oriente vers le bon parcours.</p>
+      </div>
+      <button type="button" data-open-funnel
+        class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] hover:border-white/30 transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40 shrink-0">
+        <span id="t_cta_btn">Découvrir</span>
+        <span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL FUNNEL -->
+  <div id="funnelModal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <button type="button" data-close-funnel class="absolute inset-0 bg-black/40 cursor-default"></button>
+    <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div class="relative w-full max-w-3xl max-h-[90vh] bg-[#ece4da] rounded-3xl shadow-xl border border-black/10 overflow-hidden pointer-events-auto flex flex-col" role="dialog" aria-modal="true" aria-label="Funnel Natura Mater">
+
+        <!-- Top bar -->
+        <div class="flex items-center justify-between px-6 py-4 bg-white border-b border-black/10">
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Natura Mater</p>
+            <p id="t_top_sub" class="text-sm text-black/60">Accompagnement — choisissez un parcours</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" data-back class="hidden rounded-full px-4 py-2 text-sm font-semibold border border-black/10 bg-white hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+              ← <span id="t_back">Retour</span>
+            </button>
+            <button type="button" data-close-funnel class="group rounded-full px-4 py-2 text-sm font-semibold bg-[#1a5049] text-white border border-transparent hover:bg-[#14433d] hover:border-white/30 transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+              <span id="t_close">Fermer</span> ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenu scrollable -->
+        <div class="p-6 md:p-8 overflow-y-auto">
+
+          <!-- STEP HOME -->
+          <section data-step="home">
+            <div class="bg-white rounded-3xl border border-black/10 p-7">
+              <h2 id="t_home_title" class="text-2xl md:text-3xl font-bold text-[#1a5049]">Dans quel cadre souhaitez-vous agir aujourd'hui ?</h2>
+              <p id="t_home_desc" class="mt-3 text-black/70">Choisissez l'option qui correspond le mieux à votre situation actuelle.</p>
+            </div>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button type="button" data-goto="a" class="group text-left bg-white rounded-3xl border border-black/10 p-5 hover:border-[#1a5049]/60 hover:shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+                <div class="flex items-center justify-between gap-4">
+                  <div><h3 id="t_a_card_title" class="text-lg font-semibold text-[#1a5049]">A — Se former</h3><p id="t_a_card_desc" class="mt-2 text-black/70">Monter en compétence ou former une équipe aux solutions bas-carbone.</p></div>
+                  <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]"><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span></span>
+                </div>
+              </button>
+              <button type="button" data-goto="b" class="group text-left bg-white rounded-3xl border border-black/10 p-5 hover:border-[#1a5049]/60 hover:shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+                <div class="flex items-center justify-between gap-4">
+                  <div><h3 id="t_b_card_title" class="text-lg font-semibold text-[#1a5049]">B — Être accompagné sur un projet</h3><p id="t_b_card_desc" class="mt-2 text-black/70">Réduire l'impact carbone d'un projet immobilier concret.</p></div>
+                  <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]"><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span></span>
+                </div>
+              </button>
+              <button type="button" data-goto="c" class="group text-left bg-white rounded-3xl border border-black/10 p-5 hover:border-[#1a5049]/60 hover:shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+                <div class="flex items-center justify-between gap-4">
+                  <div><h3 id="t_c_card_title" class="text-lg font-semibold text-[#1a5049]">C — Projet personnel</h3><p id="t_c_card_desc" class="mt-2 text-black/70">Construire ou rénover un habitat sain et bas-carbone.</p></div>
+                  <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]"><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span></span>
+                </div>
+              </button>
+              <button type="button" data-goto="d" class="group text-left bg-white rounded-3xl border border-black/10 p-5 hover:border-[#1a5049]/60 hover:shadow-sm transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40">
+                <div class="flex items-center justify-between gap-4">
+                  <div><h3 id="t_d_card_title" class="text-lg font-semibold text-[#1a5049]">D — Producteurs de matériaux</h3><p id="t_d_card_desc" class="mt-2 text-black/70">Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment.</p></div>
+                  <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ece4da] text-[#1a5049]"><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span></span>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP A -->
+          <section data-step="a" class="hidden">
+            <div class="bg-white rounded-3xl border border-black/10 p-7">
+              <p id="t_a_kicker" class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Parcours A — Se former</p>
+              <h2 id="t_a_title" class="mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]">Monter en compétence sur les solutions bas-carbone en construction</h2>
+              <p id="t_a_intro" class="mt-3 text-black/70">Former vos équipes aux enjeux, méthodes et matériaux de la construction durable.</p>
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href="https://www.naturamater.eu/nos-services/formations" target="_top" class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] hover:border-white/30 transition">
+                  <span id="t_a_primary">Découvrir le programme</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+                <a id="contactLinkA" href="https://www.naturamater.eu/contact-9" target="_top" rel="noopener" class="group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition">
+                  <span id="t_contact">Nous contacter</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+              </div>
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2"><h3 id="t_positioning" class="text-lg font-semibold text-[#1a5049]">Positionnement</h3><p id="t_a_pos" class="mt-2 text-black/70">Un cycle de formations structuré pour acquérir une vision globale et opérationnelle de la construction à faible impact, de la structure aux finitions.</p></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_for_who" class="text-lg font-semibold text-[#1a5049]">Pour qui</h3><ul id="t_a_forwho" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Architectes indépendants</li><li>Bureaux d'architecture</li><li>Bureaux d'étude</li><li>Équipes projets et décisionnaires</li></ul></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_pillars" class="text-lg font-semibold text-[#1a5049]">Les piliers</h3><ul id="t_a_pillars" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Matériaux bio et géosourcés</li><li>Réemploi et filières de recyclage</li><li>Méthodologie bas-carbone</li><li>Retours d'expérience projets</li><li>Cadre réglementaire et labels</li></ul></div>
+              </div>
+              <div class="mt-6 rounded-3xl border border-black/10 bg-white p-5"><h3 id="t_you_get" class="text-lg font-semibold text-[#1a5049]">Ce que vous obtenez</h3><ul id="t_a_get" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>6 modules de formation (2h / module)</li><li>Une vision complète des leviers bas-carbone</li><li>Des connaissances directement applicables</li><li>Un échange structuré autour de cas concrets</li></ul></div>
+            </div>
+          </section>
+
+          <!-- STEP B -->
+          <section data-step="b" class="hidden">
+            <div class="bg-white rounded-3xl border border-black/10 p-7">
+              <p id="t_b_kicker" class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Parcours B — Être accompagné sur un projet</p>
+              <h2 id="t_b_title" class="mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]">Réduire l'impact carbone d'un projet immobilier concret</h2>
+              <p id="t_b_intro" class="mt-3 text-black/70">Structurer les décisions bas-carbone dès les premières phases de projet.</p>
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href="https://www.naturamater.eu/nos-services/workshops" target="_top" class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] hover:border-white/30 transition">
+                  <span id="t_b_primary">Découvrir nos workshops</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+                <a id="contactLinkB" href="https://www.naturamater.eu/contact-9" target="_top" rel="noopener" class="group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition">
+                  <span id="t_contact_2">Nous contacter</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+              </div>
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2"><h3 id="t_positioning_2" class="text-lg font-semibold text-[#1a5049]">Positionnement</h3><p id="t_b_pos" class="mt-2 text-black/70">Des workshops d'accompagnement pour poser les bons arbitrages matériaux, systèmes et réemploi sur des projets immobiliers en cours ou à venir.</p></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_for_who_2" class="text-lg font-semibold text-[#1a5049]">Pour qui</h3><ul id="t_b_forwho" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Architectes</li><li>Bureaux d'étude</li><li>Développeurs et promoteurs immobiliers</li><li>Équipes projet pluridisciplinaires</li></ul></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_pillars_2" class="text-lg font-semibold text-[#1a5049]">Les piliers</h3><ul id="t_b_pillars" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Analyse globale du projet</li><li>Choix matériaux et systèmes</li><li>Réemploi et économie circulaire</li><li>Faisabilité technique</li><li>Impact carbone et performance</li></ul></div>
+              </div>
+              <div class="mt-6 rounded-3xl border border-black/10 bg-white p-5"><h3 id="t_you_get_2" class="text-lg font-semibold text-[#1a5049]">Ce que vous obtenez</h3><ul id="t_b_get" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Workshops d'accompagnement (2h)</li><li>Sessions exploratoires ciblées</li><li>Rapports matériaux et recommandations</li><li>Suivi technique selon les formats</li></ul></div>
+            </div>
+          </section>
+
+          <!-- STEP C -->
+          <section data-step="c" class="hidden">
+            <div class="bg-white rounded-3xl border border-black/10 p-7">
+              <p id="t_c_kicker" class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Parcours C — Projet personnel</p>
+              <h2 id="t_c_title" class="mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]">Construire ou rénover un habitat sain et bas-carbone</h2>
+              <p id="t_c_intro" class="mt-3 text-black/70">Faire les bons choix matériaux pour un projet confortable et durable.</p>
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href="https://www.naturamater.eu/service-page/private-session?referral=service_list_widget" target="_top" class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] hover:border-white/30 transition">
+                  <span id="t_c_primary">Découvrir la session privée</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+                <a id="contactLinkC" href="https://www.naturamater.eu/contact-9" target="_top" rel="noopener" class="group inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 font-semibold text-[#1a5049] hover:bg-[#1a5049]/10 hover:border-[#1a5049]/40 transition">
+                  <span id="t_contact_3">Nous contacter</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+              </div>
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2"><h3 id="t_positioning_3" class="text-lg font-semibold text-[#1a5049]">Positionnement</h3><p id="t_c_pos" class="mt-2 text-black/70">Une session privée d'accompagnement dédiée aux petits projets de construction ou rénovation, centrée sur le confort, la santé et l'impact environnemental.</p></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_for_who_3" class="text-lg font-semibold text-[#1a5049]">Pour qui</h3><ul id="t_c_forwho" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Particuliers</li><li>Architectes indépendants</li><li>Petits projets (&lt; 200 m²)</li></ul></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_pillars_3" class="text-lg font-semibold text-[#1a5049]">Les piliers</h3><ul id="t_c_pillars" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Santé et qualité de l'air intérieur</li><li>Confort thermique et acoustique</li><li>Matériaux non polluants</li><li>Solutions bas-carbone accessibles</li></ul></div>
+              </div>
+              <div class="mt-6 rounded-3xl border border-black/10 bg-white p-5"><h3 id="t_you_get_3" class="text-lg font-semibold text-[#1a5049]">Ce que vous obtenez</h3><ul id="t_c_get" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Session privée de 90 minutes</li><li>Inspiration concrète via la matérathèque</li><li>Recommandations adaptées à votre projet</li><li>Clarté sur les choix possibles</li></ul></div>
+            </div>
+          </section>
+
+          <!-- STEP D -->
+          <section data-step="d" class="hidden">
+            <div class="bg-white rounded-3xl border border-black/10 p-7">
+              <p id="t_d_kicker" class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Parcours D — Producteurs de matériaux</p>
+              <h2 id="t_d_title" class="mt-2 text-2xl md:text-3xl font-bold text-[#1a5049]">Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment</h2>
+              <p id="t_d_intro" class="mt-3 text-black/70">Intégrer votre solution durable à la matérathèque Natura Mater.</p>
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a id="contactLinkD" href="https://www.naturamater.eu/contact-9" target="_top" rel="noopener" class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] hover:border-white/30 transition">
+                  <span id="t_contact_4">Nous contacter</span><span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+                </a>
+              </div>
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5 md:col-span-2"><h3 id="t_positioning_4" class="text-lg font-semibold text-[#1a5049]">Positionnement</h3><p id="t_d_pos" class="mt-2 text-black/70">Un programme de partenariat permettant aux producteurs de matériaux de gagner en visibilité, crédibilité et mise en relation avec un réseau qualifié.</p></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_for_who_4" class="text-lg font-semibold text-[#1a5049]">Pour qui</h3><ul id="t_d_forwho" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Producteurs de matériaux biosourcés</li><li>Fabricants de solutions bas-carbone</li><li>Acteurs du recyclage et du réemploi</li><li>Industriels engagés</li></ul></div>
+                <div class="rounded-3xl bg-[#ece4da] border border-black/10 p-5"><h3 id="t_pillars_4" class="text-lg font-semibold text-[#1a5049]">Les piliers</h3><ul id="t_d_pillars" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Matériaux biosourcés et recyclés</li><li>Innovation bas-carbone</li><li>Transparence et traçabilité</li><li>Mise en réseau professionnelle</li></ul></div>
+              </div>
+              <div class="mt-6 rounded-3xl border border-black/10 bg-white p-5"><h3 id="t_you_get_4" class="text-lg font-semibold text-[#1a5049]">Ce que vous obtenez</h3><ul id="t_d_get" class="mt-3 space-y-2 text-black/70 list-disc pl-5"><li>Intégration à la matérathèque</li><li>Accès à un réseau de +4000 professionnels</li><li>Visibilité auprès de prescripteurs</li><li>3 formules de partenariat adaptées</li></ul></div>
+            </div>
+          </section>
+
+        </div><!-- /scrollable -->
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-white border-t border-black/10 text-sm text-black/60">
+          <span id="t_footer">Astuce : vous pouvez fermer à tout moment (ESC) et revenir au site.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const i18n = {
+      fr: {
+        cta_title:"Explorez les solutions bas-carbone pour votre projet", cta_sub:"Répondez en 15 secondes — on vous oriente vers le bon parcours.", cta_btn:"Découvrir",
+        top_sub:"Accompagnement — choisissez un parcours", back:"Retour", close:"Fermer",
+        home_title:"Dans quel cadre souhaitez-vous agir aujourd'hui ?", home_desc:"Choisissez l'option qui correspond le mieux à votre situation actuelle.",
+        a_card_title:"A — Se former", a_card_desc:"Monter en compétence ou former une équipe aux solutions bas-carbone.",
+        b_card_title:"B — Être accompagné sur un projet", b_card_desc:"Réduire l'impact carbone d'un projet immobilier concret.",
+        c_card_title:"C — Projet personnel", c_card_desc:"Construire ou rénover un habitat sain et bas-carbone.",
+        d_card_title:"D — Producteurs de matériaux", d_card_desc:"Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment.",
+        positioning:"Positionnement", for_who:"Pour qui", pillars:"Les piliers", you_get:"Ce que vous obtenez", contact:"Nous contacter",
+        a_kicker:"Parcours A — Se former", a_title:"Monter en compétence sur les solutions bas-carbone en construction", a_intro:"Former vos équipes aux enjeux, méthodes et matériaux de la construction durable.", a_primary:"Découvrir le programme",
+        a_pos:"Un cycle de formations structuré pour acquérir une vision globale et opérationnelle de la construction à faible impact, de la structure aux finitions.",
+        a_forwho:["Architectes indépendants","Bureaux d'architecture","Bureaux d'étude","Équipes projets et décisionnaires"],
+        a_pillars:["Matériaux bio et géosourcés","Réemploi et filières de recyclage","Méthodologie bas-carbone","Retours d'expérience projets","Cadre réglementaire et labels"],
+        a_get:["6 modules de formation (2h / module)","Une vision complète des leviers bas-carbone","Des connaissances directement applicables","Un échange structuré autour de cas concrets"],
+        b_kicker:"Parcours B — Être accompagné sur un projet", b_title:"Réduire l'impact carbone d'un projet immobilier concret", b_intro:"Structurer les décisions bas-carbone dès les premières phases de projet.", b_primary:"Découvrir nos workshops",
+        b_pos:"Des workshops d'accompagnement pour poser les bons arbitrages matériaux, systèmes et réemploi sur des projets immobiliers en cours ou à venir.",
+        b_forwho:["Architectes","Bureaux d'étude","Développeurs et promoteurs immobiliers","Équipes projet pluridisciplinaires"],
+        b_pillars:["Analyse globale du projet","Choix matériaux et systèmes","Réemploi et économie circulaire","Faisabilité technique","Impact carbone et performance"],
+        b_get:["Workshops d'accompagnement (2h)","Sessions exploratoires ciblées","Rapports matériaux et recommandations","Suivi technique selon les formats"],
+        c_kicker:"Parcours C — Projet personnel", c_title:"Construire ou rénover un habitat sain et bas-carbone", c_intro:"Faire les bons choix matériaux pour un projet confortable et durable.", c_primary:"Découvrir la session privée",
+        c_pos:"Une session privée d'accompagnement dédiée aux petits projets de construction ou rénovation, centrée sur le confort, la santé et l'impact environnemental.",
+        c_forwho:["Particuliers","Architectes indépendants","Petits projets (< 200 m²)"],
+        c_pillars:["Santé et qualité de l'air intérieur","Confort thermique et acoustique","Matériaux non polluants","Solutions bas-carbone accessibles"],
+        c_get:["Session privée de 90 minutes","Inspiration concrète via la matérathèque","Recommandations adaptées à votre projet","Clarté sur les choix possibles"],
+        d_kicker:"Parcours D — Producteurs de matériaux", d_title:"Valoriser vos solutions bas-carbone auprès des professionnels du bâtiment", d_intro:"Intégrer votre solution durable à la matérathèque Natura Mater.",
+        d_pos:"Un programme de partenariat permettant aux producteurs de matériaux de gagner en visibilité, crédibilité et mise en relation avec un réseau qualifié.",
+        d_forwho:["Producteurs de matériaux biosourcés","Fabricants de solutions bas-carbone","Acteurs du recyclage et du réemploi","Industriels engagés"],
+        d_pillars:["Matériaux biosourcés et recyclés","Innovation bas-carbone","Transparence et traçabilité","Mise en réseau professionnelle"],
+        d_get:["Intégration à la matérathèque","Accès à un réseau de +4000 professionnels","Visibilité auprès de prescripteurs","3 formules de partenariat adaptées"],
+        footer:"Astuce : vous pouvez fermer à tout moment (ESC) et revenir au site."
+      },
+      en: {
+        cta_title:"Explore low-carbon solutions for your project", cta_sub:"Answer in 15 seconds — we'll guide you to the right path.", cta_btn:"Discover",
+        top_sub:"Guidance — choose a path", back:"Back", close:"Close",
+        home_title:"In which context do you want to act today?", home_desc:"Choose the option that best matches your current situation.",
+        a_card_title:"A — Training", a_card_desc:"Build skills or train a team on low-carbon solutions.",
+        b_card_title:"B — Project support", b_card_desc:"Reduce the carbon impact of a real estate project.",
+        c_card_title:"C — Personal project", c_card_desc:"Build or renovate a healthy, low-carbon home.",
+        d_card_title:"D — Material producers", d_card_desc:"Showcase your low-carbon solutions to building professionals.",
+        positioning:"Positioning", for_who:"Who it's for", pillars:"Key pillars", you_get:"What you get", contact:"Contact us",
+        a_kicker:"Path A — Training", a_title:"Build skills on low-carbon solutions in construction", a_intro:"Train your teams on the challenges, methods and materials of sustainable construction.", a_primary:"View the training program",
+        a_pos:"A structured training cycle to gain a comprehensive, practical view of low-impact construction, from structure to finishes.",
+        a_forwho:["Independent architects","Architecture firms","Engineering offices","Project teams & decision-makers"],
+        a_pillars:["Bio-based & geo-sourced materials","Reuse & recycling supply chains","Low-carbon methodology","Project experience feedback","Regulations & labels"],
+        a_get:["6 training modules (2h each)","A complete view of low-carbon levers","Immediately applicable knowledge","A structured discussion on real cases"],
+        b_kicker:"Path B — Project support", b_title:"Reduce the carbon impact of a real estate project", b_intro:"Structure low-carbon decisions from the earliest project phases.", b_primary:"Explore our workshops",
+        b_pos:"Support workshops to make the right trade-offs on materials, systems and reuse for ongoing or upcoming projects.",
+        b_forwho:["Architects","Engineering offices","Developers & real estate promoters","Multidisciplinary project teams"],
+        b_pillars:["Overall project analysis","Materials & systems choices","Reuse & circular economy","Technical feasibility","Carbon impact & performance"],
+        b_get:["Support workshops (2h)","Targeted exploratory sessions","Material reports & recommendations","Technical follow-up depending on format"],
+        c_kicker:"Path C — Personal project", c_title:"Build or renovate a healthy, low-carbon home", c_intro:"Make the right material choices for a comfortable, durable project.", c_primary:"Discover the private session",
+        c_pos:"A private support session for small construction/renovation projects, focused on comfort, health and environmental impact.",
+        c_forwho:["Individuals","Independent architects","Small projects (< 200 m²)"],
+        c_pillars:["Health & indoor air quality","Thermal & acoustic comfort","Non-polluting materials","Accessible low-carbon solutions"],
+        c_get:["90-minute private session","Concrete inspiration via our materials library","Recommendations tailored to your project","Clarity on the available options"],
+        d_kicker:"Path D — Material producers", d_title:"Showcase your low-carbon solutions to building professionals", d_intro:"Integrate your sustainable solution into the Natura Mater materials library.",
+        d_pos:"A partnership program helping producers gain visibility, credibility and connections with a qualified network.",
+        d_forwho:["Bio-based material producers","Low-carbon solution manufacturers","Recycling & reuse players","Committed industrial partners"],
+        d_pillars:["Bio-based & recycled materials","Low-carbon innovation","Transparency & traceability","Professional networking"],
+        d_get:["Inclusion in the materials library","Access to a network of 4,000+ professionals","Visibility with specifiers","3 partnership options"],
+        footer:"Tip: you can close anytime (ESC) and return to the website."
+      },
+      nl: {
+        cta_title:"Ontdek laag-koolstofoplossingen voor uw project", cta_sub:"Antwoord in 15 seconden — wij leiden u naar het juiste traject.", cta_btn:"Ontdekken",
+        top_sub:"Begeleiding — kies een traject", back:"Terug", close:"Sluiten",
+        home_title:"In welke context wil je vandaag handelen?", home_desc:"Kies de optie die het best past bij je huidige situatie.",
+        a_card_title:"A — Opleiding", a_card_desc:"Je kennis vergroten of een team opleiden in laag-koolstofoplossingen.",
+        b_card_title:"B — Begeleiding bij een project", b_card_desc:"De CO₂-impact van een concreet vastgoedproject verlagen.",
+        c_card_title:"C — Persoonlijk project", c_card_desc:"Een gezonde, laag-koolstof woning bouwen of renoveren.",
+        d_card_title:"D — Materiaalproducenten", d_card_desc:"Je laag-koolstofoplossingen zichtbaar maken bij bouwprofessionals.",
+        positioning:"Positionering", for_who:"Voor wie", pillars:"Pijlers", you_get:"Wat je krijgt", contact:"Contacteer ons",
+        a_kicker:"Traject A — Opleiding", a_title:"Kennis opbouwen over laag-koolstofoplossingen in de bouw", a_intro:"Opleid je teams rond uitdagingen, methodes en materialen voor duurzame bouw.", a_primary:"Bekijk het programma",
+        a_pos:"Een gestructureerde opleidingscyclus om een globale en praktische kijk te krijgen op bouwen met lage impact, van structuur tot afwerking.",
+        a_forwho:["Zelfstandige architecten","Architectenbureaus","Studiebureaus","Projectteams & beslissers"],
+        a_pillars:["Bio- en geo-gebonden materialen","Hergebruik & recyclageketens","Laag-koolstofmethodologie","Projectervaringen","Regelgeving & labels"],
+        a_get:["6 opleidingsmodules (2u per module)","Een volledig beeld van laag-koolstofhefbomen","Direct toepasbare kennis","Gestructureerde uitwisseling rond cases"],
+        b_kicker:"Traject B — Begeleiding bij een project", b_title:"De CO₂-impact van een concreet vastgoedproject verlagen", b_intro:"Laag-koolstofkeuzes structureren vanaf de eerste projectfases.", b_primary:"Ontdek onze workshops",
+        b_pos:"Begeleidingsworkshops om de juiste keuzes te maken rond materialen, systemen en hergebruik voor lopende of toekomstige projecten.",
+        b_forwho:["Architecten","Studiebureaus","Ontwikkelaars & vastgoedpromotoren","Multidisciplinaire projectteams"],
+        b_pillars:["Globale projectanalyse","Keuze van materialen & systemen","Hergebruik & circulaire economie","Technische haalbaarheid","CO₂-impact & prestaties"],
+        b_get:["Begeleidingsworkshops (2u)","Gerichte verkennende sessies","Materiaaldossiers & aanbevelingen","Technische opvolging volgens formaat"],
+        c_kicker:"Traject C — Persoonlijk project", c_title:"Een gezonde, laag-koolstof woning bouwen of renoveren", c_intro:"De juiste materiaalkeuzes voor een comfortabel en duurzaam project.", c_primary:"Ontdek de privésessie",
+        c_pos:"Een privésessie begeleiding voor kleine bouw- of renovatieprojecten, met focus op comfort, gezondheid en milieu-impact.",
+        c_forwho:["Particulieren","Zelfstandige architecten","Kleine projecten (< 200 m²)"],
+        c_pillars:["Gezondheid & binnenluchtkwaliteit","Thermisch & akoestisch comfort","Niet-vervuilende materialen","Toegankelijke laag-koolstofoplossingen"],
+        c_get:["Privésessie van 90 minuten","Concrete inspiratie via de materialenbibliotheek","Aanbevelingen op maat van je project","Duidelijkheid over mogelijke keuzes"],
+        d_kicker:"Traject D — Materiaalproducenten", d_title:"Je laag-koolstofoplossingen zichtbaar maken bij bouwprofessionals", d_intro:"Integreer je duurzame oplossing in de Natura Mater materialenbibliotheek.",
+        d_pos:"Een partnerprogramma waarmee producenten meer zichtbaarheid, geloofwaardigheid en connecties met een gekwalificeerd netwerk krijgen.",
+        d_forwho:["Producenten van biogebaseerde materialen","Fabrikanten van laag-koolstofoplossingen","Spelers in recyclage & hergebruik","Engageerde industriële partners"],
+        d_pillars:["Biogebaseerde & gerecycleerde materialen","Laag-koolstofinnovatie","Transparantie & traceerbaarheid","Professioneel netwerk"],
+        d_get:["Opname in de materialenbibliotheek","Toegang tot een netwerk van 4.000+ professionals","Zichtbaarheid bij voorschrijvers","3 partnerformules"],
+        footer:"Tip: je kan op elk moment sluiten (ESC) en terugkeren naar de site."
+      }
+    };
+
+    function detectLang() {
+      const params = new URLSearchParams(window.location.search);
+      const q = (params.get('lang') || '').toLowerCase();
+      if (q.startsWith('en')) return 'en';
+      if (q.startsWith('nl')) return 'nl';
+      const hl = (document.documentElement.lang || '').toLowerCase();
+      if (hl.startsWith('en')) return 'en';
+      if (hl.startsWith('nl')) return 'nl';
+      const p = (window.location.pathname || '').toLowerCase();
+      if (p === '/en' || p.startsWith('/en/')) return 'en';
+      if (p === '/nl' || p.startsWith('/nl/')) return 'nl';
+      const nav = (navigator.language || '').toLowerCase();
+      if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('nl')) return 'nl';
+      return 'fr';
+    }
+
+    function setText(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+    function setList(id, items) {
+      const ul = document.getElementById(id); if (!ul) return; ul.innerHTML = '';
+      (items||[]).forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+    }
+
+    function applyI18n(lang) {
+      const t = i18n[lang] || i18n.fr;
+      document.documentElement.lang = lang;
+      setText('t_cta_title', t.cta_title); setText('t_cta_sub', t.cta_sub); setText('t_cta_btn', t.cta_btn);
+      setText('t_top_sub', t.top_sub); setText('t_back', t.back); setText('t_close', t.close);
+      setText('t_home_title', t.home_title); setText('t_home_desc', t.home_desc);
+      setText('t_a_card_title', t.a_card_title); setText('t_a_card_desc', t.a_card_desc);
+      setText('t_b_card_title', t.b_card_title); setText('t_b_card_desc', t.b_card_desc);
+      setText('t_c_card_title', t.c_card_title); setText('t_c_card_desc', t.c_card_desc);
+      setText('t_d_card_title', t.d_card_title); setText('t_d_card_desc', t.d_card_desc);
+      ['','_2','_3','_4'].forEach(s => {
+        setText('t_positioning'+s, t.positioning); setText('t_for_who'+s, t.for_who);
+        setText('t_pillars'+s, t.pillars); setText('t_you_get'+s, t.you_get);
+      });
+      setText('t_contact', t.contact); setText('t_contact_2', t.contact); setText('t_contact_3', t.contact); setText('t_contact_4', t.contact);
+      setText('t_a_kicker', t.a_kicker); setText('t_a_title', t.a_title); setText('t_a_intro', t.a_intro); setText('t_a_primary', t.a_primary); setText('t_a_pos', t.a_pos);
+      setList('t_a_forwho', t.a_forwho); setList('t_a_pillars', t.a_pillars); setList('t_a_get', t.a_get);
+      setText('t_b_kicker', t.b_kicker); setText('t_b_title', t.b_title); setText('t_b_intro', t.b_intro); setText('t_b_primary', t.b_primary); setText('t_b_pos', t.b_pos);
+      setList('t_b_forwho', t.b_forwho); setList('t_b_pillars', t.b_pillars); setList('t_b_get', t.b_get);
+      setText('t_c_kicker', t.c_kicker); setText('t_c_title', t.c_title); setText('t_c_intro', t.c_intro); setText('t_c_primary', t.c_primary); setText('t_c_pos', t.c_pos);
+      setList('t_c_forwho', t.c_forwho); setList('t_c_pillars', t.c_pillars); setList('t_c_get', t.c_get);
+      setText('t_d_kicker', t.d_kicker); setText('t_d_title', t.d_title); setText('t_d_intro', t.d_intro); setText('t_d_pos', t.d_pos);
+      setList('t_d_forwho', t.d_forwho); setList('t_d_pillars', t.d_pillars); setList('t_d_get', t.d_get);
+      setText('t_footer', t.footer);
+      const base = 'https://www.naturamater.eu';
+      const prefix = lang === 'en' ? '/en' : (lang === 'nl' ? '/nl' : '');
+      const href = base + prefix + '/contact-9';
+      ['contactLinkA','contactLinkB','contactLinkC','contactLinkD'].forEach(id => {
+        const a = document.getElementById(id); if (a) { a.href = href; a.target = '_top'; a.rel = 'noopener'; }
+      });
+    }
+
+    const modal = document.getElementById('funnelModal');
+    function normalizeStep(v) { return (v||'').toString().trim().toLowerCase(); }
+    function showStep(stepRaw) {
+      const step = normalizeStep(stepRaw);
+      const sections = Array.from(modal.querySelectorAll('[data-step]'));
+      const backBtn = modal.querySelector('[data-back]');
+      const exists = sections.some(s => normalizeStep(s.getAttribute('data-step')) === step);
+      const safe = exists ? step : 'home';
+      sections.forEach(s => s.classList.toggle('hidden', normalizeStep(s.getAttribute('data-step')) !== safe));
+      if (backBtn) backBtn.classList.toggle('hidden', safe === 'home');
+    }
+    function openModal()  { modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('overflow-hidden'); showStep('home'); }
+    function closeModal() { modal.classList.add('hidden'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('overflow-hidden'); }
+
+    document.addEventListener('click', e => {
+      if (e.target.closest('[data-open-funnel]'))  { e.preventDefault(); openModal(); return; }
+      if (e.target.closest('[data-close-funnel]')) { e.preventDefault(); closeModal(); return; }
+      if (e.target.closest('[data-back]') && !modal.classList.contains('hidden')) { e.preventDefault(); showStep('home'); return; }
+      const g = e.target.closest('[data-goto]');
+      if (g && !modal.classList.contains('hidden')) { e.preventDefault(); showStep(g.getAttribute('data-goto')); }
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+    (function init() { const lang = detectLang(); applyI18n(lang); showStep('home'); })();
+  </script>
+</body>
+</html>
