@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-transparent text-black/80 m-0 p-0">
+
+  <div class="p-3">
+    <div class="mx-auto max-w-4xl bg-white rounded-3xl border border-black/10 p-5 md:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex-1">
+        <p class="text-xs font-semibold tracking-widest text-[#1a5049] uppercase">Natura Mater</p>
+        <p id="t_cta_title" class="mt-1 text-base md:text-lg font-semibold text-[#1a5049]">Explorez les solutions bas-carbone pour votre projet</p>
+        <p id="t_cta_sub" class="mt-1 text-sm text-black/60">Répondez en 15 secondes — on vous oriente vers le bon parcours.</p>
+      </div>
+      <button type="button" id="openBtn"
+        class="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1a5049] text-white px-6 py-3 font-semibold border border-transparent hover:bg-[#14433d] transition focus:outline-none focus:ring-2 focus:ring-[#1a5049]/40 shrink-0">
+        <span id="t_cta_btn">Découvrir</span>
+        <span class="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all font-semibold">→</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const i18n = {
+      fr: { title: "Explorez les solutions bas-carbone pour votre projet", sub: "Répondez en 15 secondes — on vous oriente vers le bon parcours.", btn: "Découvrir" },
+      en: { title: "Explore low-carbon solutions for your project", sub: "Answer in 15 seconds — we'll guide you to the right path.", btn: "Discover" },
+      nl: { title: "Ontdek laag-koolstofoplossingen voor uw project", sub: "Antwoord in 15 seconden — wij leiden u naar het juiste traject.", btn: "Ontdekken" }
+    };
+
+    function detectLang() {
+      const params = new URLSearchParams(window.location.search);
+      const q = (params.get('lang') || '').toLowerCase();
+      if (q.startsWith('en')) return 'en';
+      if (q.startsWith('nl')) return 'nl';
+      const hl = (document.documentElement.lang || '').toLowerCase();
+      if (hl.startsWith('en')) return 'en';
+      if (hl.startsWith('nl')) return 'nl';
+      const p = (window.location.pathname || '').toLowerCase();
+      if (p === '/en' || p.startsWith('/en/')) return 'en';
+      if (p === '/nl' || p.startsWith('/nl/')) return 'nl';
+      const nav = (navigator.language || '').toLowerCase();
+      if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('nl')) return 'nl';
+      return 'fr';
+    }
+
+    const lang = detectLang();
+    const t = i18n[lang] || i18n.fr;
+    document.documentElement.lang = lang;
+    document.getElementById('t_cta_title').textContent = t.title;
+    document.getElementById('t_cta_sub').textContent   = t.sub;
+    document.getElementById('t_cta_btn').textContent   = t.btn;
+
+    document.getElementById('openBtn').addEventListener('click', function() {
+      console.log('Bouton cliqué - envoi du message');
+      try {
+        window.parent.postMessage({ type: 'NM_FUNNEL_OPEN', lang: lang }, '*');
+        console.log('Message envoyé avec succès');
+      } catch (e) {
+        console.error('Erreur envoi message:', e);
+      }
+    });
+  </script>
+</body>
+</html>
